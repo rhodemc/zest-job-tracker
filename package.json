@@ -1,0 +1,35 @@
+{
+  "name": "project-3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/server.js",
+  "scripts": {
+    "start:dev": "concurrently \"cd server && npm run start\" \"cd client && npm run start\"",
+    "start": "node server/server.js",
+    "heroku-postbuild": "npm install --prefix client && npm run build --prefix client && npm install --prefix server",
+    "develop": "concurrently \"cd server && npm run start\" \"cd client && npm run start\"",
+    "install": "cd server && npm install && cd ../client && npm install",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed": "node ./server/seeders/seed.js",
+    "build": "cd client && npm run build"
+  },
+  "engines": {
+    "node": "16.20.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pchandler858/Project-3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pchandler858/Project-3/issues"
+  },
+  "homepage": "https://github.com/pchandler858/Project-3#readme",
+  "dependencies": {
+    "concurrently": "^8.2.0",
+    "dotenv": "^16.3.1",
+    "jwt-decode": "^2.2.0"
+  }
+}
